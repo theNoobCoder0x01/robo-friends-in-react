@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SearchBox = ({ searchTextChange }) => (
 	<div className="pa2">
 		<input

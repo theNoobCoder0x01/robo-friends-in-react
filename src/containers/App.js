@@ -3,6 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const App = (props) => {
 	const [searchText, setSearchText] = useState("");
@@ -32,7 +33,9 @@ const App = (props) => {
 				<SearchBox searchTextChange={onTextChange}/>
 			</div>
 			<Scroll>
-				<CardList robots={filteredRobots}/>
+				<ErrorBoundary>
+					<CardList robots={filteredRobots}/>
+				</ErrorBoundary>
 			</Scroll>
 		</div>
 	);
